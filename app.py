@@ -12,7 +12,7 @@ st.markdown("Enter the details of Expenses")
 conn = st.connection("gsheets",type = GSheetsConnection)
 
 # Fetch existing expense data
-existing_data = conn.read(worksheet="Expense entry form",usecols=list(range(5)),ttl=5)
+existing_data = conn.read(worksheet="expenses",usecols=list(range(5)),ttl=5)
 existing_data = existing_data.dropna(how="all")
 
 #st.dataframe(existing_data)
